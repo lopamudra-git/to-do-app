@@ -12,6 +12,7 @@ input[type='text']{
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 .todo-item_content{
 width: 80%;

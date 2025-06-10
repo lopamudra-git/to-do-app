@@ -15,5 +15,20 @@ const response = await fetch(`https://dummyjson.com/todos/${id}`, {
 if(response.ok){
     getAllTodos()
 }
+return response
 console.log('update response',response)
+}
+export const addTodo=async(data)=>{
+const response=await fetch('https://dummyjson.com/todos/add', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: data
+})
+return response.json()
+}
+export const deleteATodo=async(id)=>{
+const response=await fetch(`https://dummyjson.com/todos/${id}`, {
+  method: 'DELETE',
+})
+return response
 }

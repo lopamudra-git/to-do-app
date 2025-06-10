@@ -9,6 +9,7 @@ const TodoList=()=>{
         console.log('saved',saved)
         return saved ? JSON.parse(saved):[]
     })
+    const [filteredTodos,setFilteredTodos]=useState(allTodos)
     const [selectedOption,setSelectedOption]=useState()
     const getAllTodosData=async()=>{
         const response=await getAllTodos()
@@ -24,13 +25,14 @@ const TodoList=()=>{
         if (option == 'completed') {
             const completedTodos = allTodos.filter(a => a.completed == true)
             console.log('completed list',completedTodos)
-            localStorage.setItem('allTodos', JSON.stringify(completedTodos))
+            setFilteredTodos(completedTodos);
+            /* localStorage.setItem('allTodos', JSON.stringify(completedTodos)) */
             console.log('todos',allTodos)
         } else if (option == 'pending') {
             const pendingTodos = allTodos.filter(a => a.completed != true)
-            localStorage.setItem('allTodos', JSON.stringify(pendingTodos))
+            setFilteredTodos(pendingTodos);
         } else {
-            getAllTodosData()
+            setFilteredTodos(allTodos)
         }
     }
     /* useEffect(()=>{
@@ -54,7 +56,7 @@ const TodoList=()=>{
             </select>
             </label>
             </div>
-            {allTodos.map(item=>(
+            {filteredTodos.map(item=>(
                 <TodoItem item={item}/>
             ))}
         </div>
