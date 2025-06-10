@@ -1,0 +1,31 @@
+input[type='text']{
+    margin: 4px 0px;
+    padding: 4px;
+    border-radius: 8px;
+}
+.todo-item{
+    padding: 4px;
+    border: 2px solid gray;
+    border-radius: 8px;
+    box-shadow: 0px 0px 2px 0px gray;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.todo-item_content{
+width: 80%;
+}
+.todo-item_status{
+width: 20%; 
+}
+.todo-item_content_complete{
+    background-color: gray;
+    color: whitesmoke;
+}
+.filter{
+    margin: 8px 0px;
+}
+select{
+    padding: 4px 0px;
+}
