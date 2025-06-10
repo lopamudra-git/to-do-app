@@ -13,13 +13,11 @@ const AddTodo=()=>{
          window.alert(`Task added with id:${response.id}`)
          /* setUserInput('') */
     }
-    const changeInput=(value)=>{
-       
-    }
+    
     return(
         <>
         <div style={{display:'flex',gap:'3px',margin:'auto',width:'70%'}}>
-        <input type="text" name="task" ref={inputRef} placeholder="Enter your task" onChange={(e)=>changeInput(e.target.value)}/>
+        <input type="text" name="task" ref={inputRef} placeholder="Enter your task" />
         <button type='submit'onClick={handleAdd} style={{borderRadius:'4px'}}>Add</button>
         </div>
         </>
